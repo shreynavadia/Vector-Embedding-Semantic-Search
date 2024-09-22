@@ -8,7 +8,8 @@ from sentence_transformers import SentenceTransformer
 conn = sqlite3.connect('movies.db')
 c = conn.cursor()
 
-@st.cache
+# Use st.cache_data to cache data like CSV loading
+@st.cache_data
 def load_data():
     return pd.read_csv("imdb_top_1000.csv")
 
@@ -33,9 +34,15 @@ movies["Text_For_Embedding"] = movies["Series_Title_Clean"] + " " + movies["Over
 st.write("Cleaned Text for Embedding:")
 st.write(movies[["Series_Title", "Overview", "Text_For_Embedding"]].head(10))
 
-model = SentenceTransformer('paraphrase-MiniLM-L6-v2')
+# Use st.cache_resource to cache heavy resources like models
+@st.cache_resource
+def load_model():
+    return SentenceTransformer('paraphrase-MiniLM-L6-v2')
 
-@st.cache
+model = load_model()
+
+# Cache the embeddings generation function using st.cache_data
+@st.cache_data
 def embed_text(text_list):
     return [model.encode(text) for text in text_list]
 
