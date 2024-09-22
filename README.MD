@@ -1,26 +1,30 @@
-Movie Embedding and Search App
-This is a Streamlit-based application that performs semantic search on a dataset of movie titles and overviews. It uses the SentenceTransformer model to create text embeddings, which are stored in a SQLite database. Users can search for movies by inputting a description, and the app will find the most similar movies based on cosine similarity.
+# Movie Embedding and Search App
 
-Features
-Load and display a dataset of the top 1000 IMDb movies.
-Clean and preprocess movie titles and overviews.
-Generate sentence embeddings using the paraphrase-MiniLM-L6-v2 model from SentenceTransformer.
-Store the embeddings and movie information in a SQLite database.
-Search for similar movies using cosine similarity on the embeddings.
-Prerequisites
+This is a Streamlit-based application that performs semantic search on a dataset of movie titles and overviews. It uses the `SentenceTransformer` model to create text embeddings, which are stored in a SQLite database. Users can search for movies by inputting a description, and the app will find the most similar movies based on cosine similarity.
+
+## Features
+- Load and display a dataset of the top 1000 IMDb movies.
+- Clean and preprocess movie titles and overviews.
+- Generate sentence embeddings using the `paraphrase-MiniLM-L6-v2` model from `SentenceTransformer`.
+- Store the embeddings and movie information in a SQLite database.
+- Search for similar movies using cosine similarity on the embeddings.
+
+## Prerequisites
+
 Make sure you have the following installed on your system:
 
-Python 3.8+
-Streamlit
-Pandas
-Numpy
-Sentence-Transformers
-SQLite (bundled with Python via sqlite3)
-Install Required Libraries
-You can install the required libraries using pip:
+1. **Python 3.8+**
+2. **Streamlit**
+3. **Pandas**
+4. **Numpy**
+5. **Sentence-Transformers**
+6. **SQLite (bundled with Python via `sqlite3`)**
 
-bash
-Copy code
+### Install Required Libraries
+
+You can install the required libraries using `pip`:
+
+```bash
 pip install streamlit pandas numpy sentence-transformers
 Dataset
 The app uses an IMDb dataset containing the top 1000 movies. Make sure you have the imdb_top_1000.csv file in the same directory as the app, or update the path accordingly in the code.
@@ -62,3 +66,15 @@ Future Improvements
 Add support for more complex search queries.
 Use a more sophisticated database like PostgreSQL for larger datasets.
 Improve the search ranking algorithm.
+License
+This project is licensed under the MIT License.
+
+markdown
+Copy code
+
+### Instructions:
+
+1. Replace `<script_name>.py` with the actual name of your Python file.
+2. Place this `README.md` in your repository.
+
+This `README.md` is fully formatted for GitHub and uses appropriate Markdown syntax for sections, code blocks, and file structure.
